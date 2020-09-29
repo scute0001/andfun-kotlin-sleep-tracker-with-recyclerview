@@ -90,7 +90,7 @@ class SleepNightAdapter : RecyclerView.Adapter<SleepNightAdapter.ViewHolder>() {
 
 
 
-    }
+
 
 //    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextItemViewHolder {
 //
@@ -119,7 +119,5 @@ class SleepNightAdapter : RecyclerView.Adapter<SleepNightAdapter.ViewHolder>() {
         val quality: TextView = itemView.findViewById(R.id.quality_string)
         val qualityImage: ImageView = itemView.findViewById(R.id.quality_image)
     }
-
-
 
 }
