@@ -22,6 +22,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.trackmysleepquality.R
 import com.example.android.trackmysleepquality.TextItemViewHolder
+import com.example.android.trackmysleepquality.convertLongToDateString
+import com.example.android.trackmysleepquality.convertNumericQualityToString
 import com.example.android.trackmysleepquality.database.SleepNight
 
 class SleepNightAdapter(): RecyclerView.Adapter<TextItemViewHolder>() {
@@ -36,7 +38,13 @@ class SleepNightAdapter(): RecyclerView.Adapter<TextItemViewHolder>() {
 
     override fun onBindViewHolder(holder: TextItemViewHolder, position: Int) {
         val item = data[position]
-        holder.textView.text = item.sleepQuality.toString()
+//        holder.textView.text = item.sleepQuality.toString()
+        holder.textView.text = """ID: ${item.nightId}
+            |start time: ${convertLongToDateString(item.startTimeMilli)}
+            |end time: ${convertLongToDateString(item.endTimeMilli)}
+            |quality: ${item.sleepQuality}
+            |
+        """.trimMargin()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextItemViewHolder {
