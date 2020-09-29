@@ -16,8 +16,11 @@
 
 package com.example.android.trackmysleepquality.sleeptracker
 
+import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.android.trackmysleepquality.R
 import com.example.android.trackmysleepquality.TextItemViewHolder
 import com.example.android.trackmysleepquality.database.SleepNight
 
@@ -25,6 +28,10 @@ class SleepNightAdapter: RecyclerView.Adapter<TextItemViewHolder>() {
 
     // TODO (03) Add a custom setter to data that calls notifyDataSetChanged().
     var data =  listOf<SleepNight>()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
 
     override fun getItemCount() = data.size
 
@@ -36,9 +43,12 @@ class SleepNightAdapter: RecyclerView.Adapter<TextItemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextItemViewHolder {
 
         // TODO (01) Inflate the text_item_view layout.
+        val layoutInflater = LayoutInflater.from(parent.context)
+        val view = layoutInflater
+                .inflate(R.layout.text_item_view, parent, false) as TextView
 
         // TODO (02) Return the inflated view.
+        return TextItemViewHolder(view)
 
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }
