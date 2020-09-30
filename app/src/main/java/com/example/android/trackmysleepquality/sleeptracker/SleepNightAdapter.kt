@@ -18,6 +18,7 @@ package com.example.android.trackmysleepquality.sleeptracker
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -68,6 +69,11 @@ class SleepNightAdapter : ListAdapter<SleepNight,
             fun from(parent: ViewGroup): ViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = ListItemSleepNightBinding.inflate(layoutInflater, parent, false)
+//                val binding = DataBindingUtil.inflate<ListItemSleepNightBinding>(
+//                        layoutInflater,
+//                        R.layout.list_item_sleep_night,
+//                        parent,
+//                        false)
 
                 return ViewHolder(binding)
             }
