@@ -91,7 +91,6 @@ class SleepNightAdapter : RecyclerView.Adapter<SleepNightAdapter.ViewHolder>() {
     //        }
 
 
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val item = data[position]
             holder.bind(item)
@@ -100,8 +99,6 @@ class SleepNightAdapter : RecyclerView.Adapter<SleepNightAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder.from(parent)
     }
-
-
 
 
 
@@ -126,9 +123,6 @@ class SleepNightAdapter : RecyclerView.Adapter<SleepNightAdapter.ViewHolder>() {
 //    }
 
     // Create a ViewHolder class that extends RecyclerView.ViewHolder.
-
-
-
 
     class ViewHolder private constructor(itemView: View) : RecyclerView.ViewHolder(itemView){
         // Refactor the logic for creating the ViewHolder into a function called from().
